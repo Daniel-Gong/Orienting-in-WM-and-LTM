@@ -7,7 +7,7 @@ projectname = 'detect gaze shift (microsaccade) from gaze position';
 %% prepare Toolbox
 parent_folder = '/Users/dongyu/Documents/Github/spontaneousMicrosaccade_EEGAlpha/';
 package_folder = '/Users/dongyu/Documents/Github/spontaneousMicrosaccade_EEGAlpha/customToolbox/';
-data_folder = '/Users/dongyu/MATLAB-Drive/exp3_eye_data';
+data_folder = '/Users/dongyu/MATLAB-Drive/exp2_eye_data';
 
 cfg= [];
 cfg.package_folder = package_folder;
@@ -30,7 +30,7 @@ for subjInd = 1:length(subjList)
     load(nonNaNList{subjInd})
     % get data in x axis
     data_shift =[];
-    if strcmp(subjList{subjInd}(end-7:end-4),'pp49')
+    if strcmp(subjList{subjInd}(end-7:end-4),'pp49') % deal with the missing data (this participant doesn't have the first 80 trials of learning phase)
         startTrial = 1;
         disp('start from trial 1');
     else
@@ -52,9 +52,6 @@ for subjInd = 1:length(subjList)
 
     % remove saccade whose size > 1 degree of visual angle
     eye_shift(abs(eye_shift)>1) = 0;
-
-    % remove saccade whose size < 1% (0.05 degree of visual angle)
-%     eye_shift(abs(eye_shift)<0.05) = 0;
 
     data_shift.shift = eye_shift;
     data_shift.time = time_shift;

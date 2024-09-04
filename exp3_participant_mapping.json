@@ -1,0 +1,3308 @@
+{
+  "5e2edcd3744c694aa3fab543": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5febbfa2a4d824cf3d607196": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "5d5fc0ad29b1d80001430de0": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5eac4b0a1f8db726fc6060c8": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5ddb84c67af661ad594e95d4": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5fb6ed2116919c000a99249e": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "6560ae7968dae6508fe4d420": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5f7014ba8655415e9dddc1b7": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5c60c298af517e0001a00b00": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5e96185ae3d45508abe19a36": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "65e2b3b946ad361e29ccd504": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5c5baaec192d350001d5c8e4": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "5b0c1fdebd9c3100015641ae": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "5f9dbfe05e108133385603fd": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5b74413e722bd2000195c067": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      269
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "5e5c993cd0394c474f7cc502": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5e7a5584718c83035a42519c": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "5e6f91fe74ff43011dd127ec": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "614775c6f329a9e5ab190e04": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5f108dea719866356702d26f": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5f0214e58782120a8c970fd6": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5baf6705848bbd0001d6fc8a": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5f516a44067fba1b4c562a55": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "609bfd97a7c95881330491d4": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "657fbbe828dfa7fbd9a169b6": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "65ae78fc9cd81e8e26612cb2": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "614b55e22ff3944a165736bb": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "658405e29e9aac7350cdb75a": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5f21c29511084913913af654": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "65745708518a6ec1b4773387": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "check": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      269
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      269,
+      359
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "60f874f29a003c1fd595ba46": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "61636a4bf1a773cc305502e7": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "656013477ede6fae3cc2728b": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "65a44f2891a3f0e75374a681": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "65b84bb4babea54509c67828": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "606e2c6d64e3ba353fb68bd5": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5f8d35cc8c96854e037df333": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5fc964a6f1bba642e52124f3": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5b305b176d601d0001d5ea96": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "64483a04905bcd4a0e0b21e7": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "60f679ef8bc07769a1af64e4": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "613a2a887cab4afeb484eef4": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "613e65aa18049c2251345c3f": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "60dc664ea12f7f477dbc4d9d": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "65a59ec6ce36c09b7a3a8e70": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "60aea3068c18c4a83c630833": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "61143bd22a1649da3b52ae32": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "6169c75c94f8d8dacf4fe265": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5f1b2fe23bcef80c38d2a362": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "5df5143f58a5c738d0e197af": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "65ec07509e72647fd829ccdb": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5cc618c53c503e0001a61a63": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "5d6e3252dfe6d10001dbe508": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5e4949035607633bb4759ffe": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "607ec7379eac7be04ab448e3": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5f63a2bc08a0080c790f8eb6": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5edab6df83998915303516d5": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5e8a5a892f6f027054a83d88": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "65cf6d92ac6f7932b1470fb4": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5c41f9ce4fe4f800016dfaac": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5dafea4de40355001651fa2f": {
+    "group": "",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5dfe7de0bf3d4eb1cc979a7a": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "650222d04fe305c48c9a98ee": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5f0eaf80c42b540711cc68b0": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      269
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "60f5b42174aa93c2c1522ecf": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      359
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "65a9346ad1f231c46618a067": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "612537b2bd6b4a38f4e7f63a": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "59d4c100078dbe0001951236": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "5c8bafb53b6f3d00013d7c30": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "60bbc368a316ee5421a1153b": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "5fbfe145e52a44000a9c2966": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "64a9c85cd18d2853ec8eca4d": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5f2df57e756b8414ea47017f": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5dafea4de40355001651fa2ff": {
+    "group": "",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5608a73fd7def20012b7389d": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "6162e2f241835c1e2f8099df": {
+    "group": "",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5fc9ec3d0990d4501dfd7e05": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "6522a42f39b5bd8f96735aa9": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "6557ecc93cc84dd3699e608c": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "611cf0fcb571ffef2625d948": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "6527e40a8a1bf0c1ad98cdd3": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "5f60713e595007000a8e1da7": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "5d49d17b3dad1f0001e2aba1": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "64e90980b61f9d9b18570af5": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "63ea4564de250efaacb1cceb": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      269
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "5ed8cf4782a6eb04ddf9962d": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "610cd5f2b38b2d1bffe55477": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5d453e8723a5bb0001492546": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "653d2a959b3275b66eb93a61": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "60fd6618f9a377f54dcdf318": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "62eac88dc8087b43cdf64480": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "602bcbe610c7c138a909e6e4": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "605a2dbead400eae8de18f8c": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5e1f7b2a4c9b832b34e7c9d3": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "5a2adf6a8e00a000019864fb": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5cbe04b4f429ff00159de30e": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "561487ad7ffc8a0012812266": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "61413300c9d2346cfb3d9ca5": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5ed543442db0060a955d12e1": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "5c05cfad84b02d0001155d3e": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5bc880109f7801000148601b": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "65b89c41a8e165e4e2562176": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "60721a45b75cb8f4b00abd05": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "65009151ae76614bc29c63c5": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "600f9342e7bc5518fa9ca92a": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "5f4e22f75080c69f541d9500": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "60f814d5348f2f80c0e60c3a": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5faeb56b25a37f01d47d326c": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "6511e9adc4ba37678f5f1181": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "6511f1f1490c9df9f8c7890e": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "545d347afdf99b7f9fca22c7": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "6067dddcfd845322c6dddae6": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "654afb2d87012840100daf23": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "65c0f99b71fb575465c6ca0d": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      359
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "604b2da4f24a3d7a227553a0": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "5f29eff59714081a3594a331": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  },
+  "613b08149aaccb2ae9fb88c6": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "6529425c8642a206285c998b": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      359
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "63f77b9ca8439f6e1620c1cd": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "60ef2e52a188d9859f92bb58": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "65e1f75ab3efd22e847cfbf0": {
+    "group": "B",
+    "ltmColors": [
+      179,
+      269
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "651c59ec0cb6fef4208190f5": {
+    "group": "",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "": {
+    "group": "",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5dfdc45e617219a8e2e05c26": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5f87993abcee241dace4a140": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  },
+  "5c70974403f85b0001af8d5d": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "607893faf75b80c8b2a14613": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  },
+  "60c9f83c9e07879a1ca4ae3a": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "63ffcb367b500c516d0648a2": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "5fd7782dee03dc08d3f3f491": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  },
+  "564e93659b124900127eb55b": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      269,
+      179
+    ],
+    "wmShapes": [
+      89,
+      359
+    ]
+  },
+  "5f0f7fe1d7ad1c000b42d091": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "60561bed5ea5ad8dbe3fae07": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      269,
+      89
+    ]
+  },
+  "604b169fe4b7991ec08da3a6": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "65aa815acfeb858f15d2cf29": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      359
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "60d2c59451b12e36fb281477": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5f06eefaf3fc742667b4e79d": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5eacf00a6d3e2837cef1a9d4": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "651eda4af4a809dbba0bb002": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "5f565a2b33c152071057bb04": {
+    "group": "B",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "604b169fe4b7991ec08da3a62": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "63474e67a5fd298c6103c409": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "61267b828ead584bcf092e35": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "55c15819fdf99b6aa2cb9713": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "5e24fbd4e1f467771c234e5f": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "5a87b173b093f80001a7ece9": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "596634e005f2df00017281ae": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5ef308c7177aaa011e808579": {
+    "group": "B",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "60bec2aeb32067ea868876ec": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      269,
+      359
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "6505ac055ce097f5c35a4760": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      179
+    ],
+    "wmColors": [
+      269,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "6003f87a5cc6b04174b083d6": {
+    "group": "B",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "615d051e2366aeb051acb734": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "65a2a4643cc27e9702199c43": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      269,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "60bf964f35e4cada9f7f03cc": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      359
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "63be3c7ab7bccecc7dc80cd4": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "63d196c147d1f420690e5b87": {
+    "group": "",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      269,
+      179
+    ]
+  },
+  "63cefafe1587b9e35702bc9e": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5fe3792db939ed02b8c1d0f8": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      89,
+      179
+    ]
+  },
+  "653e1d568239743665fadd23": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "63d196c147d1f420690e5b86": {
+    "group": "",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "5f7f239e9b204e05b6c36538": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "63d196c147d1f420690e5b85": {
+    "group": "",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      89,
+      179
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      179,
+      359
+    ]
+  },
+  "61717173748006894b2b54ff": {
+    "group": "",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      89,
+      359
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "5f78e7a0d14cd84e060fde57": {
+    "group": "",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      359,
+      89
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "61570d5eb2963a6d6ea3719a": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      269
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      179,
+      89
+    ],
+    "wmShapes": [
+      359,
+      269
+    ]
+  },
+  "5d7d0cc0e32539001a174642": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      89
+    ],
+    "wmColors": [
+      179,
+      269
+    ],
+    "ltmShapes": [
+      359,
+      179
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "660dc402b15789026445073d": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      359,
+      179
+    ],
+    "ltmShapes": [
+      89,
+      179
+    ],
+    "wmShapes": [
+      269,
+      359
+    ]
+  },
+  "6507b0bf6c158dca2bfde795": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      89
+    ],
+    "wmColors": [
+      179,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      89
+    ],
+    "wmShapes": [
+      179,
+      269
+    ]
+  },
+  "63dd3dd2593c92be97d8dbde": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      89
+    ],
+    "wmColors": [
+      269,
+      359
+    ],
+    "ltmShapes": [
+      359,
+      269
+    ],
+    "wmShapes": [
+      179,
+      89
+    ]
+  },
+  "655be887bea58a8fa4cc9a48": {
+    "group": "A",
+    "ltmColors": [
+      89,
+      179
+    ],
+    "wmColors": [
+      359,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      359
+    ],
+    "wmShapes": [
+      89,
+      269
+    ]
+  },
+  "566bdeb3beaf21001240085a": {
+    "group": "A",
+    "ltmColors": [
+      359,
+      269
+    ],
+    "wmColors": [
+      179,
+      89
+    ],
+    "ltmShapes": [
+      269,
+      89
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  },
+  "5a814c18190420000155d331": {
+    "group": "A",
+    "ltmColors": [
+      179,
+      359
+    ],
+    "wmColors": [
+      89,
+      269
+    ],
+    "ltmShapes": [
+      179,
+      269
+    ],
+    "wmShapes": [
+      359,
+      89
+    ]
+  },
+  "661b949e5368a2e5224c825f": {
+    "group": "A",
+    "ltmColors": [
+      269,
+      179
+    ],
+    "wmColors": [
+      89,
+      359
+    ],
+    "ltmShapes": [
+      89,
+      269
+    ],
+    "wmShapes": [
+      359,
+      179
+    ]
+  }
+}
