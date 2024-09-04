@@ -1,0 +1,591 @@
+---
+title: "Analysis_Exp3_Probe_XandY"
+author: "Dongyu Gong"
+date: "23 May 2024"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r setup2}
+set.seed(2024)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+rm(list = ls())
+```
+
+```{r library,include=TRUE,warning=FALSE,message=FALSE}
+library(tidyr)
+library(permuco)
+library(ggplot2)
+library(zoo)
+library(readxl)
+library(dplyr)
+library(Rmisc)
+library(smoothie)
+library(svglite)
+```
+
+```{r fileread, results='hide'}
+
+files <- list.files(path='Output/csv',pattern = ".csv", recursive =F) 
+# load the  data
+et_dat <- NULL
+for(file in files){
+  print(file)
+  tmp <- data.table::fread(paste('Output/csv/',file,sep = ''), sep = ",", header = T)
+  et_dat <- rbind(et_dat, tmp)
+  tmp<-NULL
+}
+
+```
+
+```{r}
+## set values
+timepersample = 1000/1000 # 1 sample = 1ms
+baseline = 250 # samples, i.e. 250ms
+probe_start = 0
+probe_end = 1000
+smoothwindow = 25 # samples,i.e. 25ms
+```
+
+# X position baseline
+```{r}
+dat_baseline <- aggregate(meanxp ~participant+block, data=et_dat[(et_dat$cueFrame>-baseline & et_dat$cueFrame<=0),], mean)
+hist(dat_baseline$meanxp,100)
+names(dat_baseline)[names(dat_baseline) == "meanxp"] <- "precue_baselineX"
+et_dat <- inner_join(et_dat,dat_baseline,by = c("participant","block"))
+et_dat$meanxp_baselined <- et_dat$meanxp - et_dat$precue_baselineX
+hist(et_dat$meanxp_baselined,100)
+```
+
+# Y position baseline
+```{r}
+dat_baseline <- aggregate(meanyp ~ participant+block, data=et_dat[(et_dat$cueFrame>-baseline & et_dat$cueFrame<=0),], mean)
+hist(dat_baseline$meanyp,100)
+names(dat_baseline)[names(dat_baseline) == "meanyp"] <- "precue_baselineY"
+et_dat <- inner_join(et_dat,dat_baseline,by = c("participant","block"))
+et_dat$meanyp_baselined <- et_dat$meanyp - et_dat$precue_baselineY
+hist(et_dat$meanyp_baselined,100)
+```
+
+#X data after excluding the outliers
+```{r}
+hist(et_dat$meanxp_baselined[abs(et_dat$meanxp_baselined) < (960-725)/2],100)
+excl <- et_dat[abs(et_dat$meanxp_baselined) > (960-725)/2,]
+summary(excl$meanxp_baselined)
+excl$excluded <- 1
+excl_blocks <- aggregate(excluded~participant+block,excl,mean)
+(avgexcl <- aggregate(excluded~participant, data=excl_blocks,sum))
+avgexcl$prop <- avgexcl$excluded/600
+print(paste("Avg excluded trials per participant:",(mean(avgexcl$prop))*100,"%",sep=" "))
+(summarySE(data=avgexcl,measurevar = "prop"))
+print(paste("Overall excluded trials:",(nrow(excl_blocks)/(600*44)*100),"%",sep=" "))
+xdat <- dplyr::left_join(et_dat,excl_blocks, by = c("participant","block"))
+# rm(et_dat)
+xdat <- xdat[is.na(xdat$excluded),]
+```
+
+#Y data after excluding the outliers
+```{r}
+hist(et_dat$meanyp_baselined[abs(et_dat$meanyp_baselined) < (775-540)/2],100)
+# have to discard data for some participants for whom 50% of the trials eye moved beyond half the distance between the fixation and the centre of the memory items
+# truncated_et_dat <- et_dat[!is.element(et_dat$participant,c('32_JO','22_YW','25_YC','35_KS','50_QY','46_DP')),]
+excl <- et_dat[abs(et_dat$meanyp_baselined) > (775-540)/2,]
+summary(excl$meanyp_baselined)
+excl$excluded <- 1
+excl_blocks <- aggregate(excluded~participant+block,excl,mean)
+avgexcl <- aggregate(excluded~participant, data=excl_blocks,sum)
+avgexcl$prop <- avgexcl$excluded/600
+(avgexcl[order(avgexcl$prop,decreasing = T),])
+print(paste("Avg excluded trials per participant:",(mean(avgexcl$prop))*100,"%",sep=" "))
+(summarySE(data=avgexcl,measurevar = "prop"))
+print(paste("Overall excluded y data:",(nrow(excl_blocks)/(600*44)*100),"%",sep=" "))
+ydat <- dplyr::left_join(et_dat,excl_blocks, by = c("participant","block"))
+rm(et_dat)
+ydat <- ydat[is.na(ydat$excluded),]
+```
+
+#Smooth and cut X data
+```{r}
+xdat <- xdat[xdat$cueFrame>probe_start & xdat$cueFrame < probe_end,]
+xdat$meanxp_baselined <- TTR::SMA(xdat$meanxp_baselined,smoothwindow)
+```
+
+#Smooth and cut Y data
+```{r}
+ydat <- ydat[ydat$cueFrame>probe_start & ydat$cueFrame < probe_end,]
+ydat$meanyp_baselined <- TTR::SMA(ydat$meanyp_baselined,smoothwindow)
+```
+
+# Item_dir_lr: X data
+```{r}
+#Let's have a new variable dealing with neutral cue
+neutral_data <- read_excel("neutral_info_exp3.xlsx")
+neutral_data <- mutate(neutral_data,item_lr = case_when(
+        item_loc %in% c(1,3) ~ 'left',
+        item_loc %in% c(2,4) ~ 'right'))
+neutral_data$block <- neutral_data$block + 80
+neutral_data.select <- neutral_data %>% dplyr::select(participant,block,item_lr,item_category)
+neutral_data.select <- as.data.frame(neutral_data.select)
+neutral_data.select$block <- as.integer(neutral_data.select$block)
+xdat <- left_join(xdat,neutral_data.select,by = c("participant","block"))
+xdat$item_dir_lr <- xdat$cue_dir_lr
+xdat$item_dir_lr[!is.na(xdat$item_lr)] <- xdat$item_lr[!is.na(xdat$item_lr)]
+```
+
+#Item_dir_tb: Y data
+```{r}
+neutral_data <- mutate(neutral_data,item_tb = case_when(
+        item_loc %in% c('1','2') ~ 'top',
+        item_loc %in% c('3','4') ~ 'bottom'))
+neutral_data.select <- neutral_data %>% dplyr::select(participant,block,item_tb,item_category)
+neutral_data.select <- as.data.frame(neutral_data.select)
+neutral_data.select$block <- as.integer(neutral_data.select$block)
+ydat <- left_join(ydat,neutral_data.select,by = c("participant","block"))
+ydat$item_dir_tb <- ydat$cue_dir_tb
+ydat$item_dir_tb[!is.na(ydat$item_tb)] <- ydat$item_tb[!is.na(ydat$item_tb)]
+```
+
+# ADDED: aggregate for neutral cue probe period: X
+```{r}
+
+aggX <- data.table::setDT(xdat)[,lapply(.SD, mean),
+                                by=.(participant, item_dir_lr, cue_category, item_category, cueFrame), 
+                                .SDcols=c("meanxp_baselined")]
+
+# deal with missing data
+aggX$meanxp_baselined[aggX$participant=='03_SL' & aggX$cue_category=='LTM'] = zoo::na.approx(aggX$meanxp_baselined[aggX$participant=='03_SL' & aggX$cue_category=='LTM'], na.rm = FALSE, rule = 2)
+```
+
+# aggregate for probe period: X
+```{r}
+
+aggX <- data.table::setDT(xdat)[,lapply(.SD, mean),
+                                by=.(participant, cue_dir_lr,cue_category, cueFrame), 
+                                .SDcols=c("meanxp_baselined")]
+
+# deal with missing data
+aggX$meanxp_baselined[aggX$participant=='03_SL' & aggX$cue_category=='LTM'] = zoo::na.approx(aggX$meanxp_baselined[aggX$participant=='03_SL' & aggX$cue_category=='LTM'], na.rm = FALSE, rule = 2)
+```
+
+# ADDED: aggregate for probe period: Y
+```{r}
+aggY <- data.table::setDT(ydat)[,lapply(.SD, mean),
+                                by=.(participant, item_dir_tb, cue_category, item_category, cueFrame),
+                                .SDcols=c("meanyp_baselined")]
+# deal with missing data
+aggY$meanyp_baselined[aggY$participant=='03_SL' & aggY$cue_category=='LTM'] = zoo::na.approx(aggY$meanyp_baselined[aggY$participant=='03_SL' & aggY$cue_category=='LTM'], na.rm = FALSE, rule = 2)
+```
+
+# aggregate for probe period: Y
+```{r}
+aggY <- data.table::setDT(ydat)[,lapply(.SD, mean),
+                                by=.(participant, cue_dir_tb,cue_category, cueFrame), 
+                                .SDcols=c("meanyp_baselined")]
+# deal with missing data
+aggY$meanyp_baselined[aggY$participant=='03_SL' & aggY$cue_category=='LTM'] = zoo::na.approx(aggY$meanyp_baselined[aggY$participant=='03_SL' & aggY$cue_category=='LTM'], na.rm = FALSE, rule = 2)
+```
+
+# ADDED: neutral condition: left and right: X
+```{r}
+aggX <- aggX[aggX$cue_category=='Neutral' & aggX$item_dir_lr!='neutral',]
+table_lr<-summarySEwithin(data=aggX, measurevar = "meanxp_baselined", withinvars = c("item_dir_lr","item_category","cueFrame"),idvar = "participant",na.rm = TRUE)
+table_lr$time <- as.numeric(table_lr$cueFrame)
+
+table_lr$item_category <- factor(table_lr$item_category, levels=c('WM', 'LTM'))
+table_lr$item_dir_lr <- factor(table_lr$item_dir_lr, levels=c('left', 'right'))
+
+ggplot(table_lr, aes(x = time, y = meanxp_baselined)) + 
+    labs(y = "Offset (pixels)", x = "Time relative to probe onset (ms)", color="Neutral cue, probe direction") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_line(aes(color = item_dir_lr),alpha = 1,size=1) +
+    geom_ribbon(aes(ymax=meanxp_baselined+se, ymin=meanxp_baselined-se, fill=item_dir_lr), alpha = 0.2) +
+    theme_set(theme_gray(base_size = 20)) +
+    scale_color_manual(labels=c("left","right"),
+                       values = c("blue", "red")) + 
+    scale_fill_manual(labels=c("left","right"),
+                      values = c("blue", "red")) + 
+    # scale_y_continuous(breaks = seq(-4, 2, by = 2)) +
+    guides(fill="none") +
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position= 'bottom', 
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid"),
+          strip.background = element_blank()) +
+    facet_grid(~item_category)
+ggsave("figures/neutral_bias_RL.svg", device = "svg",width = 25, height = 15, units = "cm")
+```
+
+
+# Gaze bias: left and right: X
+```{r}
+aggX <- aggX[!is.na(aggX$meanxp_baselined),]
+table_lr<-summarySEwithin(data=aggX, measurevar = "meanxp_baselined", withinvars = c("cue_dir_lr","cue_category","cueFrame"),idvar = "participant",na.rm = TRUE)
+table_lr$time <- as.numeric(table_lr$cueFrame)
+
+table_lr$cue_category <- factor(table_lr$cue_category, levels=c('Neutral','WM', 'LTM'))
+table_lr$cue_dir_lr <- factor(table_lr$cue_dir_lr, levels=c('neutral','left', 'right'))
+
+#table_lr <- table_lr[table_lr$cue_category!='Neutral',]
+
+ggplot(table_lr, aes(x = time, y = meanxp_baselined)) + 
+    labs(y = "Offset (pixels)", x = "Time relative to cue onset (ms)", color="Cue direction") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_line(aes(color = cue_dir_lr),alpha = 1,size=1) +
+    geom_ribbon(aes(ymax=meanxp_baselined+se, ymin=meanxp_baselined-se, fill=cue_dir_lr), alpha = 0.2) +
+    theme_set(theme_gray(base_size = 20)) +
+    scale_color_manual(labels=c("neutral","left","right"),
+                       values = c("gray","blue", "red")) + 
+    scale_fill_manual(labels=c("neutral","left","right"),
+                      values = c("gray","blue", "red")) +
+    # scale_y_continuous(breaks = seq(-4, 2, by = 2)) +
+    guides(fill="none") +
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position= 'bottom', 
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid"),
+          strip.background = element_blank()) +
+    facet_grid(~cue_category)
+ggsave("figures/bias_RL.svg", device = "svg",width = 25, height = 15, units = "cm")
+```
+# ADDED: neutral condition: top and bottom: Y
+```{r}
+aggY <- aggY[aggY$cue_category=='Neutral' & aggY$item_dir_tb!='neutral',]
+table_tb<-summarySEwithin(data=aggY, measurevar = "meanyp_baselined", withinvars = c("item_dir_tb","item_category","cueFrame"),idvar = "participant")
+table_tb$time <- as.numeric(table_tb$cueFrame)
+
+table_tb$item_category <- factor(table_tb$item_category, levels=c('WM', 'LTM'))
+table_tb$item_dir_tb <- factor(table_tb$item_dir_tb, levels=c('bottom', 'top'))
+
+ggplot(table_tb, aes(x = time, y = -meanyp_baselined)) + 
+    labs(y = "Offset (pixels)", x = "Time relative to probe onset (ms)", color="Neutral cue, probe direction") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_line(aes(color = item_dir_tb),alpha = 1,size=1) +
+    geom_ribbon(aes(ymax=-meanyp_baselined+se, ymin=-meanyp_baselined-se, fill=item_dir_tb), alpha = 0.2)+
+    theme_set(theme_gray(base_size = 20)) +
+    scale_color_manual(labels=c("bottom","top"),
+                       values = c("blue", "red")) + 
+    scale_fill_manual(labels=c("bottom","top"),
+                      values = c("blue", "red")) + 
+    # scale_y_continuous(breaks = c(-4,-2,0,2),limits = c(-4,3)) +
+    guides(fill="none") +
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position= 'bottom', 
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid"),
+          strip.background = element_blank()) + 
+    facet_grid(~item_category)
+
+ggsave("figures/neutral_bias_TB.svg", device = "svg", width = 25, height = 15, units = "cm")
+```
+
+
+
+# Gaze bias: top and bottom: Y
+```{r}
+aggY <- aggY[!is.na(aggY$meanyp_baselined),]
+table_tb<-summarySEwithin(data=aggY, measurevar = "meanyp_baselined", withinvars = c("cue_dir_tb","cue_category","cueFrame"),idvar = "participant")
+table_tb$time <- as.numeric(table_tb$cueFrame)
+
+table_tb$cue_category <- factor(table_tb$cue_category, levels=c('Neutral','WM', 'LTM'))
+table_tb$cue_dir_tb <- factor(table_tb$cue_dir_tb, levels=c('neutral','bottom', 'top'))
+
+#table_tb <- table_tb[table_tb$cue_category!='Neutral',]
+
+ggplot(table_tb, aes(x = time, y = -meanyp_baselined)) + 
+    labs(y = "Offset (pixels)", x = "Time relative to probe onset (ms)", color="Cue direction") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_line(aes(color = cue_dir_tb),alpha = 1,size=1) +
+    geom_ribbon(aes(ymax=-meanyp_baselined+se, ymin=-meanyp_baselined-se, fill=cue_dir_tb), alpha = 0.2)+
+    theme_set(theme_gray(base_size = 20)) +
+    scale_color_manual(labels=c("neutral","bottom","top"),
+                       values = c("gray","blue", "red")) + 
+    scale_fill_manual(labels=c("neutral","bottom","top"),
+                      values = c("gray","blue", "red")) + 
+    # scale_y_continuous(breaks = c(-4,-2,0,2),limits = c(-4,3)) +
+    guides(fill="none") +
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position= 'bottom', 
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid"),
+          strip.background = element_blank()) + 
+    facet_grid(~cue_category)
+
+ggsave("figures/bias_TB.svg", device = "svg", width = 25, height = 15, units = "cm")
+```
+
+# Color settings for LTM and WM
+```{r}
+cols <- c("LTM" = rgb(138/255,118/255,190/255), "WM" = rgb(65/255,143/255,111/255))#(0.9882, 0.5529, 0.3843),(0.4000, 0.7608, 0.6471)
+```
+
+# Towardness: Left and right: X
+```{r}
+towardR <- aggX[aggX$cue_dir_lr == "right",]
+towardL <- aggX[aggX$cue_dir_lr == "left",]
+towardN <- aggX[aggX$cue_dir_lr == "neutral",]
+toward <- full_join(towardR,towardL, by =c("participant","cue_category","cueFrame"))
+toward <- dplyr::mutate(toward, meanxp_baselined.y=zoo::na.approx(meanxp_baselined.y, na.rm = FALSE, rule = 2))
+toward$meanxp <- (toward$meanxp_baselined.x-toward$meanxp_baselined.y)/2
+table_lr_t <-summarySEwithin(data=toward, measurevar = "meanxp",withinvars = c("cue_category","cueFrame"), idvar = "participant",na.rm = TRUE)
+table_lr_t$time <- as.numeric(as.character(table_lr_t$cueFrame))*timepersample
+
+table_lr_t$cue_category <- factor(table_lr_t$cue_category, levels=c('WM', 'LTM'))
+
+(towardnessX <- ggplot(table_lr_t, aes(x = time, y = meanxp, fill=cue_category)) + 
+    labs(y = "Towardness (pixels)", x = "Time relative to cue onset (ms)", color="Cue category") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_vline(xintercept=0, linetype="dashed",size=0.2, alpha=0.5) +
+    geom_line(size=1, aes(colour=cue_category)) +
+    geom_ribbon(aes(ymax=meanxp+se, ymin=meanxp-se), alpha = 0.2)+
+    scale_color_manual(labels=c("WM","LTM"),
+                       values = cols,
+                       aesthetics = c("colour", "fill")) + 
+    # scale_y_continuous(breaks = c(0,1,2)) + #seq(1, 2, by = 1)
+    guides(fill="none") +
+    theme_set(theme_gray(base_size = 20)) +
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position = "bottom",
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid")
+          )
+ )
+```
+# cluster-based permutation test- X data - DEBUG
+```{r}
+#LTM
+toward_LTM <- toward[toward$cue_category=="LTM",] %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- pivot_wider(toward_LTM, names_from = cueFrame, values_from = meanxp)
+
+zeros <- eyeX
+zeros[3:ncol(eyeX)] <- 0
+zeros$cue_category <- "zero"
+eyeX <- rbind(eyeX,zeros)
+
+## perform cbpt
+eyeClust <-permuco::clusterlm(eyeX[,(3:ncol(eyeX))] ~ cue_category + Error(participant/cue_category), 
+                               data = eyeX[,-(3:ncol(eyeX))],multcomp ="clustermass", 
+                               np = 5000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+# WM
+toward_WM <- toward[toward$cue_category=="WM",] %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- toward_WM %>% pivot_wider(names_from = cueFrame, values_from = meanxp)
+
+zeros <- eyeX
+zeros[3:ncol(eyeX)] <- 0
+zeros$cue_category <- "zero"
+eyeX <- rbind(eyeX,zeros)
+
+## perform cbpt
+eyeClust <-permuco::clusterlm(eyeX[,(3:ncol(eyeX))] ~ cue_category + Error(participant/cue_category), 
+                               data = eyeX[,-(3:ncol(eyeX))],multcomp ="clustermass", 
+                               np = 5000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+# Comparing two
+toward_WM_LTM <- toward %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- toward_WM_LTM %>% pivot_wider(names_from = cueFrame, values_from = meanxp)
+eyeX <- eyeX[order(eyeX$cue_category),]
+
+# perform cbpt
+eyeClust <-permuco::clusterlm(eyeX[,(3:ncol(eyeX))] ~ cue_category + Error(participant/cue_category), 
+                                data = eyeX[,-(3:ncol(eyeX))],multcomp ="clustermass", 
+                                np = 5000)
+plot(eyeClust, nbbaselinepts = baseline, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+#Draw the figure
+(towardness_sigX <-towardnessX + annotate("point", x = sig_LTM_WM , y =-0.6, colour = "black", size=1) + 
+    annotate("point", x = sig_WM , y =-0.5, colour = rgb(65/255,143/255,111/255),size=1)+
+    annotate("point", x = sig_LTM , y =-0.4, colour = rgb(138/255,118/255,190/255),size=1))
+
+ggsave("figures/towardness_RL.svg", device = "svg",width = 25, height = 15, units = "cm")
+```
+
+
+# cluster-based permutation test- X data
+```{r}
+#LTM
+toward_LTM <- toward[toward$cue_category=="LTM",] %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- pivot_wider(toward_LTM, names_from = cueFrame, values_from = meanxp)
+
+randsample <- NULL
+for (i in 1:length(unique(eyeX$participant))){
+  r<-rnorm(n = length(table_lr_t$sd[table_lr_t$cue_category=="LTM"]) , mean = 0, sd = mean(table_lr_t$sd[table_lr_t$cue_category=="LTM"]))
+  randsample <- c(randsample,r)
+}
+randsample <- data.frame(matrix(randsample,nrow = length(unique(eyeX$participant)), ncol = length(table_lr_t$sd[table_lr_t$cue_category=="LTM"]), byrow = T))
+rand <- data.frame(participant=unique(eyeX$participant), cue_category = "random")
+rand <- cbind(rand,randsample)
+colnames(rand)<-colnames(eyeX)
+combinedX <- rbind(eyeX,rand)
+
+## perform cbpt
+eyeClust <-permuco::clusterlm(combinedX[,(3:ncol(combinedX))] ~ cue_category + Error(participant/cue_category), 
+                               data = combinedX[,-(3:ncol(combinedX))],multcomp ="clustermass", 
+                               np = 5000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+# WM
+toward_WM <- toward[toward$cue_category=="WM",] %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- toward_WM %>% pivot_wider(names_from = cueFrame, values_from = meanxp)
+
+randsample <- NULL
+for (i in 1:length(unique(eyeX$participant))){
+  r<-rnorm(n = length(table_lr_t$sd[table_lr_t$cue_category=="WM"]), mean = 0, sd = mean(table_lr_t$sd[table_lr_t$cue_category=="WM"]))
+  randsample <- c(randsample,r)
+}
+randsample <- data.frame(matrix(randsample,nrow = length(unique(eyeX$participant)), ncol = length(table_lr_t$sd[table_lr_t$cue_category=="WM"]),byrow = T))
+rand <- data.frame(participant=unique(eyeX$participant), cue_category = "random")
+rand <- cbind(rand,randsample)
+colnames(rand)<-colnames(eyeX)
+combinedX <- rbind(eyeX,rand)
+
+## perform cbpt
+eyeClust <-permuco::clusterlm(combinedX[,(3:ncol(combinedX))] ~ cue_category + Error(participant/cue_category), 
+                               data = combinedX[,-(3:ncol(combinedX))],multcomp ="clustermass", 
+                               np = 5000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+# Comparing two
+toward_WM_LTM <- toward %>% dplyr::select(participant,cueFrame, meanxp, cue_category)
+eyeX <- toward_WM_LTM %>% pivot_wider(names_from = cueFrame, values_from = meanxp)
+eyeX <- eyeX[order(eyeX$cue_category),]
+
+# perform cbpt
+eyeClust <-permuco::clusterlm(eyeX[,(3:ncol(eyeX))] ~ cue_category + Error(participant/cue_category), 
+                                data = eyeX[,-(3:ncol(eyeX))],multcomp ="clustermass", 
+                                np = 5000)
+plot(eyeClust, nbbaselinepts = baseline, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+#Draw the figure
+(towardness_sigX <-towardnessX + annotate("point", x = sig_LTM_WM , y =-3, colour = "black", size=1) + 
+    annotate("point", x = sig_WM , y =-2, colour = rgb(65/255,143/255,111/255),size=1)+
+    annotate("point", x = sig_LTM , y =-1, colour = rgb(138/255,118/255,190/255),size=1))
+
+ggsave("figures/towardness_RL.svg", device = "svg",width = 25, height = 15, units = "cm")
+```
+
+# towardness: Top and bottom: Y data
+```{r}
+
+towardT <- aggY[aggY$cue_dir_tb == "top",]
+towardB <- aggY[aggY$cue_dir_tb == "bottom",]
+toward <- full_join(towardT,towardB, by =c("participant","cue_category","cueFrame"))
+
+toward$meanyp <- (toward$meanyp_baselined.y-toward$meanyp_baselined.x)/2
+toward <- toward[!is.na(toward$meanyp),]
+table_tb_t <-summarySEwithin(data=toward, measurevar = "meanyp",withinvars = c("cue_category","cueFrame"), idvar = "participant")
+table_tb_t$time <- as.numeric(table_tb_t$cueFrame)
+
+table_tb_t$cue_category <- factor(table_tb_t$cue_category, levels=c('WM', 'LTM'))
+
+(towardnessY <- ggplot(table_tb_t, aes(x = time, y = meanyp, fill=cue_category)) + 
+    labs(y = "Towardness (pixels)", x = "Time relative to cue onset (ms)", color="Cue category") + 
+    geom_hline(yintercept=0, linetype="dashed",size=1, alpha=1) +
+    geom_vline(xintercept=0, linetype="dashed",size=0.2, alpha=0.5) +
+    geom_line(size=1, aes(colour=cue_category)) +
+    geom_ribbon(aes(ymax=meanyp+se, ymin=meanyp-se), alpha = 0.2)+
+    scale_color_manual(labels=c("WM","LTM"),
+                       values = cols,
+                       aesthetics = c("colour", "fill")) + 
+    # scale_y_continuous(breaks = c(0,1,2),limits = c(-1,2)) +
+    guides(fill="none") +
+    theme_set(theme_gray(base_size = 20))+
+    theme(plot.title = element_text(hjust = 0.5),         
+          panel.background = element_blank(),
+          legend.position = "bottom",
+          axis.line = element_line(colour = "black", size = 0.5, linetype = "solid")
+          )
+  )
+
+```
+
+# cluster-based permutation test- Y data
+
+```{r}
+#LTM
+toward_LTM <- toward[toward$cue_category=="LTM",] %>% dplyr::select(participant,cueFrame, meanyp, cue_category)
+eyeY <- pivot_wider(toward_LTM, names_from = cueFrame, values_from = meanyp)
+
+randsample <- NULL
+for (i in 1:length(unique(eyeY$participant))){
+  r<-rnorm(n = length(table_tb_t$sd[table_tb_t$cue_category=="LTM"]) , mean = 0, sd = mean(table_tb_t$sd[table_tb_t$cue_category=="LTM"]))
+  randsample <- c(randsample,r)
+}
+randsample <- data.frame(matrix(randsample,nrow = length(unique(eyeY$participant)), ncol = length(table_tb_t$sd[table_tb_t$cue_category=="LTM"]),byrow = T))
+rand <- data.frame(participant=unique(eyeY$participant), cue_category = "random")
+rand <- cbind(rand,randsample)
+colnames(rand)<-colnames(eyeY)
+combinedY <- rbind(eyeY,rand)
+
+## perform cbpt
+eyeClust <-permuco::clusterlm(combinedY[,(3:ncol(combinedY))] ~ cue_category + Error(participant/cue_category), 
+                               data = combinedY[,-(3:ncol(combinedY))],multcomp ="clustermass", 
+                               np = 1000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+
+#WM
+toward_WM <- toward[toward$cue_category=="WM",] %>% dplyr::select(participant,cueFrame, meanyp, cue_category)
+eyeY <- toward_WM %>% pivot_wider(names_from = cueFrame, values_from = meanyp)
+
+randsample <- NULL
+for (i in 1:length(unique(eyeY$participant))){
+  r<-rnorm(n = length(table_tb_t$sd[table_tb_t$cue_category=="WM"]), mean = 0, sd = mean(table_tb_t$sd[table_tb_t$cue_category=="WM"]))
+  randsample <- c(randsample,r)
+}
+
+randsample <- data.frame(matrix(randsample,nrow = length(unique(eyeY$participant)), ncol = length(table_tb_t$sd[table_tb_t$cue_category=="WM"]),byrow = T))
+rand <- data.frame(participant=unique(eyeY$participant), cue_category = "random")
+rand <- cbind(rand,randsample)
+colnames(rand)<-colnames(eyeY)
+combinedY <- rbind(eyeY,rand)
+
+# perform cbpt
+eyeClust <-permuco::clusterlm(combinedY[,(3:ncol(combinedY))] ~ cue_category + Error(participant/cue_category), 
+                               data = combinedY[,-(3:ncol(combinedY))],multcomp ="clustermass", 
+                               np = 1000)
+plot(eyeClust, nbbaselinepts = 65, nbptsperunit = .90)
+summary(eyeClust)
+sig_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+# Comparing two
+toward_WM_LTM <- toward %>% dplyr::select(participant,cueFrame, meanyp, cue_category)
+eyeY <- toward_WM_LTM %>% pivot_wider(names_from = cueFrame, values_from = meanyp)
+eyeY <- eyeY[order(eyeY$cue_category),]
+
+# perform cbpt
+eyeClust <-permuco::clusterlm(eyeY[,(3:ncol(eyeY))] ~ cue_category + Error(participant/cue_category), 
+                                data = eyeY[,-(3:ncol(eyeY))],multcomp ="clustermass", 
+                                np = 1000)
+plot(eyeClust, nbbaselinepts = baseline, nbptsperunit = .90)
+summary(eyeClust)
+sig_LTM_WM <- (which(summary(eyeClust,table_type = "full")$cue_category$`P(>) clustermass`<0.05))*timepersample
+
+(towardness_sigY <-towardnessY + annotate("point", x = sig_LTM_WM , y =-0.6, colour = "black", size=1) + 
+    annotate("point", x = sig_WM , y =-0.5, colour = rgb(65/255,143/255,111/255),size=1)+
+    annotate("point", x = sig_LTM , y =-0.4, colour = rgb(138/255,118/255,190/255),size=1))
+    # scale_y_continuous(breaks = c(0,1,2),limits = c(-1,2))
+
+ggsave("figures/towardness_TB.svg", device = "svg", width = 25, height = 15, units = "cm")
+```
