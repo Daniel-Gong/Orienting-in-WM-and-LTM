@@ -2,7 +2,9 @@
 
 This is a repository associated with the preprint "**Focusing attention in human working memory and long-term memory: benefits through dissociable processes**" by Dongyu Gong, Dejan Draschkow, and Anna C. Nobre.
 
-Citation Info:
+Data associated with the preprint can be found at [https://osf.io/n629s/](https://osf.io/n629s/).
+
+**Citation Info:**
 ```
 @article {Gong2023.05.20.541594,
 	author = {Gong, Dongyu and Draschkow, Dejan and Nobre, Anna C.},
