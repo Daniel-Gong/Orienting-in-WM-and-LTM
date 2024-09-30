@@ -1,6 +1,6 @@
 # Orienting-in-WM-and-LTM
 
-repository associated with the preprint "**Focusing attention in human working memory and long-term memory: benefits through dissociable processes**" by Dongyu Gong, Dejan Draschkow, and Anna C. Nobre.
+This is a repository associated with the preprint "**Focusing attention in human working memory and long-term memory: benefits through dissociable processes**" by Dongyu Gong, Dejan Draschkow, and Anna C. Nobre.
 
 Citation Info:
 ```
