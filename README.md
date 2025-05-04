@@ -1,6 +1,6 @@
 # Orienting-in-WM-and-LTM
 
-This is a repository associated with the paper "**[Focusing attention in working and long-term memory through dissociable mechanisms](https://doi.org/10.1038/s41467-025-59359-0)**" by Dongyu Gong, Dejan Draschkow, and Anna C. Nobre.
+This is a repository associated with the Nature Communications paper "**[Focusing attention in working and long-term memory through dissociable mechanisms](https://doi.org/10.1038/s41467-025-59359-0)**" by Dongyu Gong, Dejan Draschkow, and Anna C. Nobre.
 
 Data associated with the preprint can be found at [https://osf.io/n629s/](https://osf.io/n629s/).
 
